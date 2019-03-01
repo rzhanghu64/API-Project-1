@@ -15,11 +15,11 @@ $.ajax({
     .then(function (response) {
         var results = response.docs;
         for (var i = 0; i < results.length; i++) {
-            var articleDiv = $("<div>");
+            var gameDiv = $("<div>");
             var h = $("<h3>");
-            h.text(results[i].snippet);
+            h.text(results[i].name);
             h.attr("src", results[i].web_url)
             articleDiv.append(h);
-            $("#input.articles").prepend(articleDiv);
+            $("#results-container").prepend(articleDiv);
         }
     });

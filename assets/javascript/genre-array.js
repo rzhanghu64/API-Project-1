@@ -1,0 +1,1 @@
+var queryURL = "https://www.giantbomb.com/api/genres/?format=json&api_key=3e367e43b48af015b21cb7640630f3fa0e510098";
