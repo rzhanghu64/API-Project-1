@@ -10,11 +10,72 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <title>Hello, world!</title>
+    <title>Game Search</title>
 </head>
 
 <body>
-    <h1>Hello, world!</h1>
+    <div class="container">
+        <h1>Game Search</h1>
+        <form>
+            <div class="form-group">
+                <label for="search-genre">Genre</label>
+                <select class="form-control" id="search-genre">
+                    <option>Action</option>
+                    <option>Strategy</option>
+                    <option>Sports</option>
+                    <option>Adventure</option>
+                    <option>Role-Playing</option>
+                    <option>Driving / Racing</option>
+                    <option>Simulation</option>
+                    <option>Educational</option>
+                    <option>Hiding</option>
+                    <option>Wrestling</option>
+                    <option>Shooter</option>
+                    <option>Real-Time Strategy</option>
+                    <option>Card Game</option>
+                    <option>Trivia / Board Game</option>
+                    <option>Compilation</option>
+                    <option>MMORPG</option>
+                    <option>Minigame Collection</option>
+                    <option>Puzzle</option>
+                    <option>Music / Rhythm</option>
+                    <option>Boxing</option>
+                    <option>Football</option>
+                    <option>Basketball</option>
+                    <option>Skateboarding</option>
+                    <option>Flight Simulator</option>
+                    <option>Billiards</option>
+                    <option>Fishing</option>
+                    <option>Golf</option>
+                    <option>Bowling</option>
+                    <option>Pinball</option>
+                    <option>Dual-Joystick Shooter</option>
+                    <option>First-person Shooter</option>
+                    <option>Snowboarding / Skiing</option>
+                    <option>Baseball</option>
+                    <option>Light-Gun Shooter</option>
+                    <option>Text Adventure</option>
+                    <option>Brawler</option>
+                    <option>Vehicular combat</option>
+                    <option>Hockey</option>
+                    <option>Soccer</option>
+                    <option>Platformer</option>
+                    <option>Track & Field</option>
+                    <option>Action-Adventure</option>
+                    <option>Fitness</option>
+                    <option>Block-Breaking</option>
+                    <option>Cricket</option>
+                    <option>Surfing</option>
+                    <option>Shoot 'Em Up</option>
+                    <option>Gambling</option>
+                    <option>MOBA</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+
+    <div id="results-container"></div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
