@@ -1,11 +1,9 @@
-var API_KEY = "9e200e5f3ba806bf8825821dd078350c";
-
 axios({
-    url: "https://api-v3.igdb.com/genres",
+    url: "https://cors-anywhere.herokuapp.com/https://api-v3.igdb.com/genres",
     method: 'POST',
     headers: {
         'Accept': 'application/json',
-        'user-key': API_KEY
+        'user-key': '9e200e5f3ba806bf8825821dd078350c',
     },
     data: "fields created_at,name,slug,updated_at,url;"
 })
