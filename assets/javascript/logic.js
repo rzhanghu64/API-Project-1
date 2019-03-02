@@ -10,6 +10,7 @@ axios({
     data: "fields *; where genres = (8) & platforms = 48;"
 })
     .then(response => {
+        var results = response.data;
         console.log(response.data);
         for (var i = 0; i < 4; i++) {
             var gameID = results[i].id;
