@@ -7,7 +7,7 @@ axios({
     },
 
     //https://api-docs.igdb.com/?javascript#examples-12 and https://api-docs.igdb.com/?javascript#game
-    data: "fields *; where genres = (8) & platforms = 48;"
+    data: "fields *; where genres = (8,9,11) & platforms = 48;"
 })
     .then(response => {
         console.log(response.data);
