@@ -1,3 +1,9 @@
 .search-button {
     float:right;
 }
+
+.card {
+    overflow: hidden;
+    display: inline-block;
+    text-align: center;
+}
