@@ -8,7 +8,7 @@ axios({
     },
 
     //https://api-docs.igdb.com/?javascript#examples-12 and https://api-docs.igdb.com/?javascript#game
-    data: "fields *; where genres = (8) & platforms = 48;"
+    data: "fields *; where genres = (12) & platforms = 48;"
 })
     .then(async response => {
         var results = response.data;
@@ -18,9 +18,9 @@ axios({
             var cardDiv = $('<div>');
             cardDiv.addClass("card");
             cardDiv.addClass("col-3");
-            var name = results[i].name;
-            var h = $("<h5>").text(name);
+            var h = $("<h5>").text(results[i].name);
             h.addClass("card-title");
+            var p = $("<p>").text(results[i].summary)
             var img = $("<img>");
             img.addClass("game-image");
             img.data("gameID", gameID);
@@ -30,7 +30,8 @@ axios({
             img.attr("src", imgLocation);
             cardDiv.append(img);
             cardDiv.append(h);
-            $("#card-container").prepend(cardDiv);
+            cardDiv.append(p);
+            $("#card-container").append(cardDiv);
         }
     })
     .catch(err => {

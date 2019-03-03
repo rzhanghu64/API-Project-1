@@ -8,7 +8,7 @@
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
-  integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css">
@@ -26,6 +26,15 @@
 </head>
 
 <body>
+
+  <nav class="navbar navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Backlog Expansion Program</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </nav>
+
   <div id="carouselExampleIndicators" class="container carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
       <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -53,7 +62,18 @@
     </a>
   </div>
   <hr>
-  <div class="container" id="card-container"></div>
+  <div class="container" id="card-container">
+    <h3>"Trending" I guess, but honestly these are just random games.</h3>
+  </div>
+  <hr>
+  <ul>I'm just going to leave my notes here, lol.
+    <li>We can change the hamburger thingy on the top right hand corner to a search button which opens a modal OR we can
+      just use the hamburger dropdown menu and add search as an option.</li>
+    <li>The games API actually returns a value called "similar games". Let's use that to our advantage.</li>
+    <li>I'm having a problem with syncing the async axios calls using 'await', which is the main thing preventing us
+      from fetching images. My function isn't waiting for the second axios call before proceeding with the rest of the
+      algorithm. Richard pls halp.</li>
+  </ul>
 </body>
 
 <script src="assets/javascript/logic.js"></script>

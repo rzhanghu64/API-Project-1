@@ -6,4 +6,10 @@
     overflow: hidden;
     display: inline-block;
     text-align: center;
+    height: 24em;
+}
+
+.carousel
+{
+    margin-top: 1em;
 }
