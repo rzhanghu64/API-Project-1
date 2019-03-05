@@ -1,3 +1,5 @@
+// Genre - API result
+
 $.ajax({
     type: 'GET',
     dataType: 'jsonp',
@@ -19,6 +21,29 @@ $.ajax({
     alert("ajax complete");
 });
 
+
+// Platforms - API result
+
+$.ajax({
+    type: 'GET',
+    dataType: 'jsonp',
+    crossDomain: true,
+    jsonp: 'json_callback',
+    url: 'http://www.giantbomb.com/api/platforms/?format=jsonp&api_key=3e367e43b48af015b21cb7640630f3fa0e510098'
+}).done(function (response) {
+    console.log(response);
+    var results = response.results;
+    for (i = 0; i < results.length; i++) {
+        var formOption1 = $("<option>")
+        formOption1.text(results[i].name);
+        formOption1.attr("data-guid1", results[i].guid);
+        $("#search-platform").append(formOption1);
+    }
+}).fail(function () {
+    alert("ajax error");
+}).always(function () {
+    alert("ajax complete");
+});
 
 //*thoughts and ideas
 //make search based on name OR genre?

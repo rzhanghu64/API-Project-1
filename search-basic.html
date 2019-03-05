@@ -26,26 +26,33 @@
 </head>
 
 <body>
-    <div class="container">
-        <h1>Game Search</h1>
-        <form>
-            <div class="form-group">
-                    <label for="formGroupExampleInput">Name</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Name">
-            </div>
-                        
-            <div class="form-group">
-                <label for="search-genre">Genre</label>
-                <select class="form-control" id="search-genre"></select>
-            </div>
+  <div class="container">
+    <h1>Game Search</h1>
+    <form>
+      <div class="form-group">
+        <label for="formGroupExampleInput">Name</label>
+        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Name">
+      </div>
+                  
+      <div class="form-group">
+        <label for="search-genre">Genre</label>
+        <select class="form-control" id="search-genre"></select>
+      </div>
 
-            <button type="submit" id="manual-button" class="btn btn-primary">Submit</button>
+      <div class="form-group">
+        <label for="search-platform">Platform</label>
+        <select class="form-control" id="search-platform"></select>
+      </div>
 
-        </form>
-    </div>
-
-    <div id="results-container"></div>
-
+      <!-- results in new html page -->
+      <a class="btn btn-primary" href="./result-basic.html" role="button" id="search-basic-submit">Submit</a>
+      <!-- results stays on current page, delete if doesn't make sense -->
+      <!-- <input class="btn btn-primary" type="submit" value="Submit" id="basic-search-submit"> -->
+      
+      <input class="btn btn-secondary" type="reset" value="Reset">
+      <a class="btn btn-secondary" href="./index.html" role="button">Return</a>
+    </form>
+  </div>
 
 </body>
 
