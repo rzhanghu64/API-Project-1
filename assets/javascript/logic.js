@@ -1,5 +1,3 @@
-var imgsrc;
-
 async function initialCall(){
 axios({
     url: "https://cors-anywhere.herokuapp.com/https://api-v3.igdb.com/games",
@@ -35,7 +33,7 @@ axios({
             cardDiv.append(p);
             $("#card-container").append(cardDiv);
         }
-        fetchCovers();
+        await fetchCovers();
     })
     .catch(err => {
         console.error(err);
@@ -47,14 +45,14 @@ async function fetchCovers(){
     for (var i = 0; i < 1; i++) {
         var img = $("#game-image-"+i);
         var currentGameID = img.data("gameid");
-        var imgsrc = await getCover(currentGameID);
+        let imgsrc = await getCover(currentGameID);
         console.log(imgsrc);
         img.attr("src", imgsrc);
         $("#card-div-"+i).prepend(img);
     }
 };
 
-async function getCover(id) {
+function getCover(id) {
     axios({
         url: "https://cors-anywhere.herokuapp.com/https://api-v3.igdb.com/covers",
         method: 'POST',

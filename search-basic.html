@@ -13,9 +13,7 @@
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css">
 
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
     integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
     crossorigin="anonymous"></script>
@@ -24,7 +22,7 @@
     crossorigin="anonymous"></script>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
-    <title>Basic Search</title>
+  <title>Basic Search</title>
 </head>
 
 <body>
@@ -38,28 +36,7 @@
                         
             <div class="form-group">
                 <label for="search-genre">Genre</label>
-                <select class="form-control" id="search-genre">
-                    <option>Adventure</option>
-                    <option>Arcade</option>
-                    <option>Fighting</option>
-                    <option>Hack and slash/Beat 'em up</option>
-                    <option>Indie</option>
-                    <option>Music</option>
-                    <option>Pinball</option>
-                    <option>Platform</option>
-                    <option>Point-and-click</option>
-                    <option>Puzzle</option>
-                    <option>Quiz/Trivia</option>
-                    <option>Racing</option>
-                    <option>Real Time Strategy (RTS)</option>
-                    <option>Role-playing (PRG)</option>
-                    <option>Shooter</option>
-                    <option>Simulator</option>
-                    <option>Sport</option>
-                    <option>Strategy</option>
-                    <option>Tactical</option>
-                    <option>Turn-based strategy (TBS)</option>
-                </select>
+                <select class="form-control" id="search-genre"></select>
             </div>
 
             <button type="submit" id="manual-button" class="btn btn-primary">Submit</button>
@@ -72,6 +49,6 @@
 
 </body>
 
-<script src="assets/javascript/logic.js"></script>
+<script src="assets/javascript/basic-search.js"></script>
 
 </html>
