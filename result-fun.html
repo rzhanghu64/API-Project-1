@@ -13,9 +13,7 @@
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css">
 
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
     integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
     crossorigin="anonymous"></script>
@@ -24,18 +22,20 @@
     crossorigin="anonymous"></script>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
-    <title>Fun Search</title>
+  <title>Fun Result</title>
 </head>
 
 <body>
   <div class="container">
-    <h1>Fun Search</h1>
+    <h1>Result</h1>
 
-    <!-- results in a new page -->
-    <a class="btn btn-primary" href="./result-fun.html" role="button" id="search-fun-submit">Submit</a>
-    <!-- results stays on current page, delete if doesn't make sense -->
-    <!-- <input class="btn btn-primary" type="submit" value="Submit" id="basic-search-submit"> -->
-    <a class="btn btn-secondary" href="./index.html" role="button">Return</a>
+    <div id="results-fun-container">
+
+    </div>
+
+    <a class="btn btn-secondary" href="./search-basic.html" role="button">Return</a>
+    <a class="btn btn-secondary" href="./index.html" role="button">Home</a>
+    </form>
   </div>
 
 </body>
