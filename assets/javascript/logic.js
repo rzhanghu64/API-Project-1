@@ -8,7 +8,8 @@ axios({
     },
 
     //https://api-docs.igdb.com/?javascript#examples-12 and https://api-docs.igdb.com/?javascript#game
-    data: "fields *; where genres = (12) & platforms = 48;"
+    // data: "fields *; where genres = (12) & platforms = 48;"
+    data: "fields name,popularity; sort popularity desc;"
 })
     .then(async response => {
         var results = response.data;
