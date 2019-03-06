@@ -31,7 +31,7 @@
     <form>
       <div class="form-group">
         <label for="formGroupExampleInput">Name</label>
-        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Name">
+        <input type="text" class="form-control" id="game-input" placeholder="Name">
       </div>
                   
       <div class="form-group">
@@ -39,20 +39,22 @@
         <select class="form-control" id="search-genre"></select>
       </div>
 
-      <div class="form-group">
+      <!-- <div class="form-group">
         <label for="search-platform">Platform</label>
         <select class="form-control" id="search-platform"></select>
-      </div>
+      </div> -->
 
       <!-- results in new html page -->
-      <a class="btn btn-primary" href="./result-basic.html" role="button" id="search-basic-submit">Submit</a>
+      <a class="btn btn-primary" role="button" id="search-basic-submit">Submit</a>
       <!-- results stays on current page, delete if doesn't make sense -->
       <!-- <input class="btn btn-primary" type="submit" value="Submit" id="basic-search-submit"> -->
       
       <input class="btn btn-secondary" type="reset" value="Reset">
-      <a class="btn btn-secondary" href="./index.html" role="button">Return</a>
+      <a class="btn btn-secondary" id="search-button" role="button">Return</a>
     </form>
   </div>
+  <hr>
+  <div class="container" id="search-results-container" style="margin-top: 1em"></div>
 
 </body>
 
