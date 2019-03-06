@@ -56,7 +56,7 @@ $(document).ready(function () {
 function loadGamePage() {
     console.log(this);
     localStorage.setItem("guid", $(this).data("guid"));
-    window.location = "result-basic.html";
+    window.location = "results.html";
 };
 
 
