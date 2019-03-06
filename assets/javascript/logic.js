@@ -13,7 +13,13 @@ axios({
 })
     .then(async response => {
         var results = response.data;
-        console.log(response.data);
+        var gameArray = [];
+        console.log(response.data[0].name);
+        for (var j = 0; j < 4; j++){
+            var gameName = response.data[j].name;
+            gameArray.push(gameName);
+        }
+        console.log(gameArray);
         for (var i = 0; i < 4; i++) {
             var cardDiv = $('<div>');
             cardDiv.addClass("card");
@@ -75,4 +81,20 @@ function getCover(id) {
             console.error(err);
         });
 };
+
+$.ajax({
+    type: 'GET',
+    dataType: 'jsonp',
+    crossDomain: true,
+    jsonp: 'json_callback',
+    url: 'http://www.giantbomb.com/api/games/?format=jsonp&api_key=3e367e43b48af015b21cb7640630f3fa0e510098'
+}).done(function (response) {
+    
+    console.log(response.results);
+    
+}).fail(function () {
+    alert("ajax error");
+}).always(function () {
+    alert("ajax complete");
+});
 
