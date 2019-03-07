@@ -30,8 +30,8 @@ axios({
             img.addClass("game-image");
             img.attr("id", "game-image-"+i)
             img.attr("data-gameid", results[i].id);
-            //await getCover(gameID);
-            //console.log(imgLocation);
+            const imgLocation = await getCover(results[i].id);
+            console.log(imgLocation);
             img.attr("src", "https://via.placeholder.com/100");
             cardDiv.append(img);
             cardDiv.append(h);
