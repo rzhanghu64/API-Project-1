@@ -15,10 +15,8 @@ $.ajax({
     var h = $('<h2>').text(result.name);
     h.attr('id','result-main-title');
     
-    var p1 = $('<p>').text(result.description);
-    p1.attr('id','result-main-description');
-    var p2 = $('<p>').text(result.deck);
-    p2.attr('id','result-main-deck');
+    var p = $('<p>').text(result.deck);
+    p.attr('id','result-main-deck');
 
     var img = $('<img>');
     img.attr('id', 'result-main-image');
@@ -26,12 +24,33 @@ $.ajax({
 
     resultMainDiv.append(h);
     resultMainDiv.append(img);
-    resultMainDiv.append(p1);
-    resultMainDiv.append(p2);
+    resultMainDiv.append(p);
 
     $('#result-main-container').append(resultMainDiv);
 
     // }
+
+    for (i = 0; (i < result.similar_games.length) && (i < 4) ; i++)
+    {
+        console.log(i);
+        console.log(result.similar_games.length);
+        console.log(result.similar_games[i].id);
+        var guid = "3030-" + result.similar_games[i].id;
+        var div = $('<div>');
+        var h = $('<h5>');
+        div.addClass('card');
+        div.addClass('col-md-3');
+        h.text(result.similar_games[i].name);
+        div.attr('id','similar-div-'+i);
+        div.attr('data-guid', guid);
+        div.attr('data-api-url', guid);
+        div.append(h);
+
+        $('#result-similar-container').append(div);
+
+    var h = $('<h2>').text(result.name);
+    h.attr('id','result-main-title');
+    }
 
 }).fail(function () {
     alert("ajax error");
