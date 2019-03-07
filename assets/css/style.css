@@ -1,7 +1,27 @@
+/* Body */
+h1 {
+
+}
+
+/* Header - Nav */
 .search-button {
     float:right;
 }
 
+/* Header - Carousel */
+.carousel {
+    margin-top: 1em;
+}
+
+#carousel-ad {
+
+}
+
+img.image-carousel-ad {
+
+}
+
+/* Content - Trending */
 .card {
     overflow: hidden;
     display: inline-block;
@@ -9,7 +29,11 @@
     height: 24em;
 }
 
-.carousel
-{
-    margin-top: 1em;
+/* Footer */
+footer {
+
+}
+
+h6 {
+    
 }

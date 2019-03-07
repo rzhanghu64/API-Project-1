@@ -1,14 +1,17 @@
+// Axios - fetching game data from API (igdb)
+
 async function initialCall(){
-axios({
-    url: "https://cors-anywhere.herokuapp.com/https://api-v3.igdb.com/games",
-    method: 'POST',
-    headers: {
-        'Accept': 'application/json',
-        'user-key': '9e200e5f3ba806bf8825821dd078350c',
-    },
-    //https://api-docs.igdb.com/?javascript#examples-12 and https://api-docs.igdb.com/?javascript#game
-    data: "fields name,popularity; sort popularity desc;"
-})
+    axios({
+        url: "https://cors-anywhere.herokuapp.com/https://api-v3.igdb.com/games",
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'user-key': '9e200e5f3ba806bf8825821dd078350c',
+        },
+        // https://api-docs.igdb.com/?javascript#examples-12 and 
+        // https://api-docs.igdb.com/?javascript#game
+        data: "fields name,popularity; sort popularity desc;"
+    })
     .then(async response => {
         var results = response.data;
         // Create an array for top-4 response based of igdb API:
@@ -39,7 +42,7 @@ axios({
             cardDiv.append(img);
             cardDiv.append(h);
             cardDiv.append(p);
-            $('#card-container').append(cardDiv);
+            $('#result-trending-container').append(cardDiv);
         }
         // await 
         fetchCovers();
@@ -48,7 +51,10 @@ axios({
         console.error(err);
     });
 };
+
 initialCall();
+
+// Axios - fetching game covers from API (igdb)
 
 async function fetchCovers(){
     for (var i = 0; i < 1; i++) {
@@ -83,6 +89,10 @@ function getCover(id) {
     });
 };
 
+
+// ====================================================================
+// Test - fetching image through API (Giant Bomb)
+
 // $.ajax({
 //     type: 'GET',
 //     dataType: 'jsonp',
@@ -97,7 +107,9 @@ function getCover(id) {
 //     alert("ajax error");
 // });
 
-// Google CSE API test
+
+// Test - fetching image through Google CSE (Customize Search Engine)
+
 var queryURL = "https://www.googleapis.com/customsearch/v1?q=" + "game" + "&searchType=image&cx=015084081056955684922:ejzkcmko2ki&key=AIzaSyDMAd3zOHJzfhAWHpweYkdtIunLkpq6s5U";
 
 $.ajax({
