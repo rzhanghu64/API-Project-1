@@ -94,7 +94,5 @@ $.ajax({
     
 }).fail(function () {
     alert("ajax error");
-}).always(function () {
-    alert("ajax complete");
 });
 
