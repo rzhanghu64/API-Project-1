@@ -6,7 +6,6 @@ axios({
         'Accept': 'application/json',
         'user-key': '9e200e5f3ba806bf8825821dd078350c',
     },
-
     //https://api-docs.igdb.com/?javascript#examples-12 and https://api-docs.igdb.com/?javascript#game
     // data: "fields *; where genres = (12) & platforms = 48;"
     data: "fields name,popularity; sort popularity desc;"
@@ -98,3 +97,6 @@ $.ajax({
     alert("ajax complete");
 });
 
+
+
+// AIzaSyDMAd3zOHJzfhAWHpweYkdtIunLkpq6s5U
