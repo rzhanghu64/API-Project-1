@@ -29,7 +29,7 @@ async function initialCall(){
             cardDiv.addClass('card');
             cardDiv.attr('id', 'card-div-'+i);
             cardDiv.addClass('col-md-3');
-            var h = $('<h5>').text(results[i].name);
+            var h = $('<h3>').text(results[i].name);
             h.addClass('card-title');
             var p = $('<p>').text(results[i].summary);
             var img = $('<img>');
