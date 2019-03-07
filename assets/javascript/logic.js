@@ -7,18 +7,17 @@ axios({
         'user-key': '9e200e5f3ba806bf8825821dd078350c',
     },
     //https://api-docs.igdb.com/?javascript#examples-12 and https://api-docs.igdb.com/?javascript#game
-    // data: "fields *; where genres = (12) & platforms = 48;"
     data: "fields name,popularity; sort popularity desc;"
 })
     .then(async response => {
         var results = response.data;
-        var gameArray = [];
-        console.log(response.data[0].name);
-        for (var j = 0; j < 4; j++){
-            var gameName = response.data[j].name;
-            gameArray.push(gameName);
-        }
-        console.log(gameArray);
+        // var gameArray = [];
+        // console.log(response.data[0].name);
+        // for (var j = 0; j < 4; j++){
+        //     var gameName = response.data[j].name;
+        //     gameArray.push(gameName);
+        // }
+        // console.log(gameArray);
         for (var i = 0; i < 4; i++) {
             var cardDiv = $('<div>');
             cardDiv.addClass("card");
@@ -39,7 +38,8 @@ axios({
             cardDiv.append(p);
             $("#card-container").append(cardDiv);
         }
-        await fetchCovers();
+        // await 
+        fetchCovers();
     })
     .catch(err => {
         console.error(err);
@@ -66,37 +66,30 @@ function getCover(id) {
             'Accept': 'application/json',
             'user-key': '9e200e5f3ba806bf8825821dd078350c',
         },
-    
         //https://api-docs.igdb.com/?javascript#examples-12 and https://api-docs.igdb.com/?javascript#game
         data: "fields *; where game = " + id + ";"
     })
-        .then(response => {
-            var results = response.data;
-            console.log(results[0].url);
-            imgsrc = results[0].url;
-            return results[0].url;
-        })
-        .catch(err => {
-            console.error(err);
-        });
+    .then(response => {
+        var results = response.data;
+        console.log(results[0].url);
+        imgsrc = results[0].url;
+        return results[0].url;
+    })
+    .catch(err => {
+        console.error(err);
+    });
 };
 
-$.ajax({
-    type: 'GET',
-    dataType: 'jsonp',
-    crossDomain: true,
-    jsonp: 'json_callback',
-    url: 'http://www.giantbomb.com/api/games/?format=jsonp&api_key=3e367e43b48af015b21cb7640630f3fa0e510098'
-}).done(function (response) {
+// $.ajax({
+//     type: 'GET',
+//     dataType: 'jsonp',
+//     crossDomain: true,
+//     jsonp: 'json_callback',
+//     url: 'http://www.giantbomb.com/api/games/?format=jsonp&api_key=3e367e43b48af015b21cb7640630f3fa0e510098'
+// }).done(function (response) {
     
-    console.log(response.results[0].guid);
+//     console.log(response.results[0].guid);
     
-}).fail(function () {
-    alert("ajax error");
-}).always(function () {
-    alert("ajax complete");
-});
-
-
-
-// AIzaSyDMAd3zOHJzfhAWHpweYkdtIunLkpq6s5U
+// }).fail(function () {
+//     alert("ajax error");
+// });
