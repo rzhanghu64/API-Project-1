@@ -33,17 +33,21 @@
   <!-- Axios -->
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
+  <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico" />
 
   <title>Questgiver|Home</title>
 </head>
 
 <body>
 
-  <!-- Header Navbar -->
-  <nav class="nav fixed-top d-flex justify-content-center"> 
+  <!-- Header Navbar--> 
+  <nav class="nav fixed-top"> 
+    <img src="assets/images/wizard.png"  alt="wizard" id="wizard">
     <a class="nav-link active" id="logo" href="#">Questgiver!</a>
-    <a class="nav-link" id="home-search" href="./search-basic.html"><i class="fas fa-search"></i>Search</a>
+    <a class="nav-link" id="home-search" href="./search-basic.html"><i class="fas fa-search"></i> Seek Quest</a>
   </nav>
+
+  
 
     <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -122,11 +126,11 @@
       <span class="sr-only">Next</span>
     </a>
   </div>
-  <hr>
+  <br />
 
   <!-- Content: Trending -->
   <div class="container">
-    <h1>Trending</h1>
+    <font color="orange"> <h1>Trending</h1></font>
     <div class="row" id="trending-container">
       <!-- trending games to be dumped in here -->
     </div>

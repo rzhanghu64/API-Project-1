@@ -14,7 +14,7 @@
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <!-- Customized CSS -->
   <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css">
-
+  <link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
   <!-- JQuery -->
   <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
   <!-- Popper JS -->
@@ -28,19 +28,22 @@
   <!-- Axios -->
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
+<link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico" />
   <title>Questgiver|Search</title>
 </head>
 
 <body>
 
-  <!-- Header Navbar -->
-  <nav class="navbar navbar-dark bg-dark">
-    <a class="navbar-brand" href="./index.html">Questgiver</a>
-    <a class="btn btn-secondary" role="button" id="home-search" href="#"><i class="fas fa-search"></i>Search</a>
-  </nav>
+  <!-- Header Navbar --> 
+  <nav class="nav fixed-top"> 
+      <img src="assets/images/wizard.png"  alt="wizard" id="wizard">
+      <a class="nav-link active" id="logo" href="#">Questgiver!</a>
+      <a class="nav-link" id="home-search" href="./index.html"><i class="fas fa-home"></i> Home</a>
+    </nav>
+  
 
   <!-- Content: Game Search -->
-  <div class="container">
+  <div class="container" id="game-form">
     <h1>Game Search</h1>
     <div class="row">
       <div class="col-md-12">
@@ -74,6 +77,12 @@
 
   <div class="container" id="result-list-container">
   <!-- list of search results to be dumped in here -->
+  </div>
+
+  
+  <!-- Footer -->
+  <div id="footer"> 
+      <h6>Copyright ©</h6>
   </div>
 
 </body>
