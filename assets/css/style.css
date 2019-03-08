@@ -9,22 +9,24 @@ h1 {}
 
 /* Header - Nav */
 
-.navbar {
-    background-color: #ff6038;
-    text-align: center;
+.nav {
+    background-color: ;
+    
 }
 
-.logo{
+#logo{
     font-family: 'Fredoka One', cursive;
     font-weight: bold;
     font-size: 2.5em;
     text-align: center;
-
+    background-color: linear-gradient (orange), yellow);
+    
 
 }
 
+
 .search-button {
-    float: right;
+     float: right;
 }
 
 /* Header - Carousel */
