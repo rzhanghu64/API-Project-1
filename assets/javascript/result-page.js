@@ -42,7 +42,7 @@ $.ajax({
     $('#result-main-container').append(resultMainDiv);
 
     similarGamesLength = result.similar_games.length;
-    for (i = 0; (i < result.similar_games.length) && (i < 4) ; i++)
+    for (i = 0; (i < result.similar_games.length) && (i < 6) ; i++)
     {
         console.log(i);
         console.log(result.similar_games.length);
@@ -51,15 +51,14 @@ $.ajax({
         var div = $('<div>');
         var h = $('<h5>');
         div.addClass('card');
-        div.addClass('col-md-3');
+        div.addClass('col-md-2');
         h.text(result.similar_games[i].name);
         div.attr('id','similar-div-'+i);
         div.attr('data-guid', guid);
         div.attr('data-api-url', guid);
         div.append(h);
-
         $('#result-similar-container').append(div);
-
+        fetchCovers();
     var h = $('<h2>').text(result.name);
     h.attr('id','result-main-title');
     }
@@ -70,7 +69,8 @@ $.ajax({
 
 function fetchCovers()
 {
-    for (i=0; (i < similarGamesLength) && (i < 4); i++)
+    for (i=0; (i < similarGamesLength) && (i < 6); i++)
+    var currentguid = $('');
     $.ajax({
         type: 'GET',
         dataType: 'jsonp',
