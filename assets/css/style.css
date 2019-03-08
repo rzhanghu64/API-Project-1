@@ -65,10 +65,11 @@ img.image-carousel-ad {
 #trending-container {}
 
 .card {
+    padding-top: 1em;
     overflow: hidden;
     display: inline-block;
     text-align: center;
-    height: 10em;
+    height: 12em;
   
 }
 

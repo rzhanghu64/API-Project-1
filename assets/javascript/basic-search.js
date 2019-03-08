@@ -54,17 +54,13 @@ $(document).ready(function () {
 });
 
 function loadGamePage() {
-    console.log(this);
     localStorage.setItem("guid", $(this).data("guid"));
     window.location = "results.html";
 };
 
-
-//*thoughts and ideas
-//make search based on name OR genre?
-
-//logic flow for search based on specific game
-//user enters specific game -> redirect to list of possible games (results html page) 
-//-> get game guid from api -> use object 'related' in array
-//-> display recommendations, possibly cycle through them using bootstrap carousel or modals?
-
+$("#input-keyword").keyup(function (event) {
+    if (event.keyCode === 13) {
+        event.preventDefault();
+        $("#input-submit").click();
+    }
+});
