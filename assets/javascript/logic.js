@@ -1,4 +1,4 @@
-const CARDSAMOUNT = 4;
+const CARDSAMOUNT = 6;
 
 async function initializeCards() {
     axios({
@@ -24,7 +24,7 @@ function createCards(results, cardsAmount) {
         var cardDiv = $('<div>');
         cardDiv.addClass("card");
         cardDiv.attr("id", "card-div-"+i)
-        cardDiv.addClass("col-3");
+        cardDiv.addClass("col-2");
         var h = $("<h5>").text(results[i].name);
         h.addClass("card-title");
         var p = $("<p>").text(results[i].summary)
@@ -33,7 +33,6 @@ function createCards(results, cardsAmount) {
         img.attr("id", "game-image-"+i)
         img.attr("data-gameid", results[i].id);
         console.log("data-gameid attribute " + results[i].id);
-        img.attr("src", "https://via.placeholder.com/100");
         cardDiv.append(img);
         cardDiv.append(h);
         cardDiv.append(p);
