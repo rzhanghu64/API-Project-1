@@ -6,52 +6,65 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <!-- Bootstrap CSS -->
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
     integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <!-- Bootstrap CSS-->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <!-- Customized CSS -->
   <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css">
 
+  <!-- JQuery -->
   <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+  <!-- Popper JS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
     integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
     crossorigin="anonymous"></script>
+  <!-- Bootstrap JS -->
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
+  <!-- Axios -->
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
-  <title>Basic Search</title>
+  <title>Questgiver|Search</title>
 </head>
 
 <body>
+
+  <!-- Header Navbar -->
+  <nav class="navbar navbar-dark bg-dark">
+    <a class="navbar-brand" href="./index.html">Questgiver</a>
+    <a class="btn btn-secondary" role="button" id="home-search" href="#"><i class="fas fa-search"></i>Search</a>
+  </nav>
+
+  <!-- Content: Game Search -->
   <div class="container">
     <h1>Game Search</h1>
-    <form>
-      <div class="form-group">
-        <label for="formGroupExampleInput">Name</label>
-        <input type="text" class="form-control" id="game-input" placeholder="Name">
+    <div class="row">
+      <div class="col-md-12">
+      <form>
+        <div class="form-group">
+          <label for="search-keyword">Keyword</label>
+          <input type="text" class="form-control" id="game-input" placeholder="Name">
+        </div>
+        <div class="form-group">
+          <label for="search-genre">Genre</label>
+          <select class="form-control" id="search-genre"></select>
+        </div>
+        <!-- <div class="form-group">
+          <label for="search-platform">Platform</label>
+          <select class="form-control" id="search-platform"></select>
+        </div> -->
+  
+        <!-- <a class="btn btn-primary" role="button" id="search-submit">Submit</a> -->
+        <input class="btn btn-primary" type="button" value="Submit" id="search-submit">
+        <input class="btn btn-secondary" type="reset" value="Reset">
+        <a class="btn btn-secondary" id="search-button" role="button">Return</a>
+      </form>
       </div>
-                  
-      <div class="form-group">
-        <label for="search-genre">Genre</label>
-        <select class="form-control" id="search-genre"></select>
-      </div>
-
-      <!-- <div class="form-group">
-        <label for="search-platform">Platform</label>
-        <select class="form-control" id="search-platform"></select>
-      </div> -->
-
-      <!-- results in new html page -->
-      <a class="btn btn-primary" role="button" id="search-basic-submit">Submit</a>
-      <!-- results stays on current page, delete if doesn't make sense -->
-      <!-- <input class="btn btn-primary" type="submit" value="Submit" id="basic-search-submit"> -->
-      
-      <input class="btn btn-secondary" type="reset" value="Reset">
-      <a class="btn btn-secondary" id="search-button" role="button">Return</a>
-    </form>
+    </div>
   </div>
   <hr>
   <div class="container" id="search-results-container" style="margin-top: 1em"></div>

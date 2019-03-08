@@ -21,7 +21,7 @@ $.ajax({
 
 //search for a specific game
 $(document).ready(function () {
-    $("#search-basic-submit").click(function () {
+    $("#search-submit").click(function () {
         console.log("clicked");
         var gameInput = $("#game-input").val();
         $.ajax({
