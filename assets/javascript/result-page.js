@@ -12,8 +12,17 @@ $.ajax({
     resultMainDiv.attr('id','result-main');
     resultMainDiv.addClass('col-md-12');
 
-    var h = $('<h2>').text(result.name);
-    h.attr('id','result-main-title');
+    var h2 = $('<h2>').text(result.name);
+    h2.attr('id','result-main-title');
+
+    var h5Rating = $('<h5>').text(result.original_game_rating[0].name);
+    var h5Date = $('<h5>').text(result.original_release_date);
+
+    // appending genres???
+    // for (i = 0; i < results.genres.length; i++) {
+    // var h4 = $('<h4>').text(result.genres[i].name);
+    // h4.attr('id','result-main-category');
+    // }
     
     var p = $('<p>').text(result.deck);
     p.attr('id','result-main-deck');
@@ -22,7 +31,10 @@ $.ajax({
     img.attr('id', 'result-main-image'); 
     img.attr('src', result.image.original_url);
 
-    resultMainDiv.append(h);
+    resultMainDiv.append(h2);
+    // resultMainDiv.append(h4);
+    resultMainDiv.append(h5Rating);
+    resultMainDiv.append(h5Date);
     resultMainDiv.append(img);
     resultMainDiv.append(p);
 

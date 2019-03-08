@@ -47,27 +47,31 @@
       <form>
         <div class="form-group">
           <label for="search-keyword">Keyword</label>
-          <input type="text" class="form-control" id="game-input" placeholder="Name">
-        </div>
-        <div class="form-group">
-          <label for="search-genre">Genre</label>
-          <select class="form-control" id="search-genre"></select>
+          <input type="text" class="form-control" id="input-keyword" placeholder="">
         </div>
         <!-- <div class="form-group">
+          <label for="search-genre">Genre</label>
+          <select class="form-control" id="input-genre"></select>
+        </div> -->
+        <!-- <div class="form-group">
           <label for="search-platform">Platform</label>
-          <select class="form-control" id="search-platform"></select>
+          <select class="form-control" id="input-platform"></select>
         </div> -->
   
-        <!-- <a class="btn btn-primary" role="button" id="search-submit">Submit</a> -->
-        <input class="btn btn-primary" type="button" value="Submit" id="search-submit">
+        <!-- <a class="btn btn-primary" role="button" id="input-submit">Submit</a> -->
+        <input class="btn btn-primary" type="button" value="Submit" id="input-submit">
         <input class="btn btn-secondary" type="reset" value="Reset">
         <a class="btn btn-secondary" id="search-button" role="button">Return</a>
       </form>
       </div>
     </div>
   </div>
-  <hr>
-  <div class="container" id="search-results-container" style="margin-top: 1em"></div>
+
+  <hr />
+
+  <div class="container" id="result-list-container">
+  <!-- list of search results to be dumped in here -->
+  </div>
 
 </body>
 
