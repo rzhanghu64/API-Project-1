@@ -16,7 +16,15 @@ $.ajax({
     var h2 = $('<h2>').text(result.name);
     h2.attr('id', 'result-main-title');
 
-    var h5Rating = $('<h5>').text(result.original_game_rating[0].name);
+    //there's a problem with fetching game ratings for some games
+    if (result.original_game_rating[0].name == null){
+
+    }
+    else{
+    var gameRating = result.original_game_rating[0].name;
+    }
+    //var h5Rating = $('<h5>').text(result.original_game_rating[0].name);
+
     var h5Date = $('<h5>').text(result.original_release_date);
 
     // appending genres???
@@ -34,7 +42,7 @@ $.ajax({
 
     resultMainDiv.append(h2);
     // resultMainDiv.append(h4);
-    resultMainDiv.append(h5Rating);
+    //resultMainDiv.append(h5Rating);
     resultMainDiv.append(h5Date);
     resultMainDiv.append(img);
     resultMainDiv.append(p);

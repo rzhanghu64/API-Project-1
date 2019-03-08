@@ -87,6 +87,13 @@ async function setCovers() {
     }
 }
 
+$(document).ready(function () {
+    $(".image-carousel-ad").click(function () {
+        localStorage.setItem("guid", $(this).data("guid"));
+        window.location = "results.html";
+    });
+});
+
 /*async function getCover(id) {
     console.log("Inside getCover()");
     console.log(id);
