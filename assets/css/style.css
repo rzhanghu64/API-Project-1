@@ -10,18 +10,17 @@ h1 {}
 /* Header - Nav */
 
 .nav {
-    background-color: ;
-    
+    background-color: dodgerblue;
 }
 
 #logo{
     font-family: 'Fredoka One', cursive;
     font-weight: bold;
-    font-size: 2.5em;
+    font-size: 3em;
     text-align: center;
-    background-color: linear-gradient (orange), yellow);
-    
-
+    background: linear-gradient(to right, orange 0%, yellow 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
 }
 
 
@@ -32,7 +31,7 @@ h1 {}
 /* Header - Carousel */
 
 .carousel {
-    margin-top: 2em;
+    margin-top: 3em;
 }
 
 #carousel-ad {
