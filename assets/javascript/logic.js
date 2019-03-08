@@ -48,12 +48,12 @@ axios({
 initialCall();
 
 async function fetchCovers(){
-    for (var i = 0; i < 1; i++) {
+    for (var i = 0; i < 4; i++) {
         var img = $("#game-image-"+i);
         var currentGameID = img.data("gameid");
         let imgsrc = await getCover(currentGameID);
         console.log(imgsrc);
-        img.attr("src", imgsrc);
+        img.attr("src", "https://via.placeholder.com/200");
         $("#card-div-"+i).prepend(img);
     }
 };
