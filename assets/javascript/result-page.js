@@ -42,6 +42,28 @@ $.ajax({
 
     // }
 
+    for (i = 0; (i < result.similar_games.length) && (i < 4) ; i++)
+    {
+        console.log(i);
+        console.log(result.similar_games.length);
+        console.log(result.similar_games[i].id);
+        var guid = "3030-" + result.similar_games[i].id;
+        var div = $('<div>');
+        var h = $('<h5>');
+        div.addClass('card');
+        div.addClass('col-md-3');
+        h.text(result.similar_games[i].name);
+        div.attr('id','similar-div-'+i);
+        div.attr('data-guid', guid);
+        div.attr('data-api-url', guid);
+        div.append(h);
+
+        $('#result-similar-container').append(div);
+
+    var h = $('<h2>').text(result.name);
+    h.attr('id','result-main-title');
+    }
+
 }).fail(function () {
     alert("ajax error");
 });
