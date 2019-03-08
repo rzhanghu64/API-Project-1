@@ -14,6 +14,7 @@ async function initializeCards() {
         var results = response.data;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         // Create an array for top-4 response based of igdb API:
         // var gameArray = [];
         // console.log(response.data[0].name);
@@ -55,6 +56,10 @@ async function initializeCards() {
 >>>>>>> 013d81557d10714166d497eb38870002435a92a8
 =======
 >>>>>>> f05a06dc55ca5e07d1b7ba25ec52e66224615e1a
+=======
+        createCards(results, CARDSAMOUNT);
+        setCovers();
+>>>>>>> f80a42e2d778cb241e891380933ff6828c77420b
     });
    
 };
@@ -78,7 +83,7 @@ function createCards(results, cardsAmount) {
         cardDiv.append(img);
         cardDiv.append(h);
         cardDiv.append(p);
-        $("#card-container").append(cardDiv);
+        $("#trending-container").append(cardDiv);
     }
 }
 

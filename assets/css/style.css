@@ -1,27 +1,49 @@
 /* Body */
-h1 {
+body {
+    background-image: url("../images/background.png");
+    background-repeat: repeat;
 
 }
 
+h1 {}
+
 /* Header - Nav */
+
+.navbar {
+    background-color: #ff6038;
+    text-align: center;
+}
+
+.logo{
+    font-family: 'Fredoka One', cursive;
+    font-weight: bold;
+    font-size: 2.5em;
+    text-align: center;
+
+
+}
+
 .search-button {
-    float:right;
+    float: right;
 }
 
 /* Header - Carousel */
+
 .carousel {
-    margin-top: 1em;
+    margin-top: 2em;
 }
 
 #carousel-ad {
-
+    padding: 3em;
 }
 
 img.image-carousel-ad {
-
+    height: 380px;
+    width: 100%;
 }
 
 /* Content - Trending */
+
 .card {
     overflow: hidden;
     display: inline-block;
@@ -30,10 +52,14 @@ img.image-carousel-ad {
 }
 
 /* Footer */
-footer {
+
+#footer {
+    color: black;
+    text-align: center;
+    bottom: 0;
+    height: 2em;
+    width: 100%;
 
 }
 
-h6 {
-    
-}
+h6 {}
