@@ -1,4 +1,4 @@
-const CARDSAMOUNT = 4;
+const CARDSAMOUNT = 6;
 
 async function initializeCards() {
     axios({
@@ -27,7 +27,7 @@ function createCards(results, cardsAmount) {
         var cardDiv = $('<div>');
         cardDiv.addClass("card");
         cardDiv.attr("id", "card-div-"+i)
-        cardDiv.addClass("col-3");
+        cardDiv.addClass("col-2");
         var h = $("<h5>").text(results[i].name);
         h.addClass("card-title");
         var p = $("<p>").text(results[i].summary)
