@@ -1,3 +1,5 @@
+var similarGamesLength;
+
 $.ajax({
     type: 'GET',
     dataType: 'jsonp',
@@ -7,7 +9,6 @@ $.ajax({
 }).done(function (response) {
     console.log(response);
     var result = response.results;
-    // for (i = 0; i < results.length; i++) {
     var resultMainDiv = $('<div>');
     resultMainDiv.attr('id','result-main');
     resultMainDiv.addClass('col-md-12');
@@ -40,8 +41,7 @@ $.ajax({
 
     $('#result-main-container').append(resultMainDiv);
 
-    // }
-
+    similarGamesLength = result.similar_games.length;
     for (i = 0; (i < result.similar_games.length) && (i < 4) ; i++)
     {
         console.log(i);
@@ -68,4 +68,20 @@ $.ajax({
     alert("ajax error");
 });
 
-localStorage.getItem("guid")
+function fetchCovers()
+{
+    for (i=0; (i < similarGamesLength) && (i < 4); i++)
+    $.ajax({
+        type: 'GET',
+        dataType: 'jsonp',
+        crossDomain: true,
+        jsonp: 'json_callback',
+        url: 'http://www.giantbomb.com/api/game/' + localStorage.getItem("guid") +'/?format=jsonp&api_key=3e367e43b48af015b21cb7640630f3fa0e510098'
+    }).done(function (response) {
+        
+    }).fail(function () {
+        alert("ajax error");
+    });
+}
+
+localStorage.getItem("guid");
