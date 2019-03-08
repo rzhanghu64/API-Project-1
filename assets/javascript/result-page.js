@@ -24,6 +24,14 @@ $.ajax({
     // var gameRating = result.original_game_rating[0].name;
     // }
     //var h5Rating = $('<h5>').text(result.original_game_rating[0].name);
+    var gameRating;
+    if (result.original_game_rating == null) {
+        gameRating = "Not Rated";
+    }
+    else{
+        gameRating = result.original_game_rating[0].name;
+    }
+    var h5Rating = $('<h5>').text(gameRating);
 
     var h5Date = $('<h5>').text(result.original_release_date);
 
@@ -42,15 +50,20 @@ $.ajax({
 
     resultMainDiv.append(h2);
     // resultMainDiv.append(h4);
-    //resultMainDiv.append(h5Rating);
+    resultMainDiv.append(h5Rating);
     resultMainDiv.append(h5Date);
     resultMainDiv.append(img);
     resultMainDiv.append(p);
 
     $('#result-main-container').append(resultMainDiv);
 
+    if (result.similar_games === null) {
+        similarGamesLength = 0;
+    } else {
     similarGamesLength = result.similar_games.length;
-    for (i = 0; (i < result.similar_games.length) && (i < 6); i++) {
+    }
+
+    for (i = 0; (i < similarGamesLength) && (i < 6); i++) {
         var guid = "3030-" + result.similar_games[i].id;
         var div = $('<div>');
         var h = $('<h5>').text(result.similar_games[i].name);
