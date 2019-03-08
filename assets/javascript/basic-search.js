@@ -13,7 +13,7 @@ $.ajax({
         var formOption = $("<option>")
         formOption.text(results[i].name);
         formOption.attr("data-guid", results[i].guid);
-        $("#search-genre").append(formOption);
+        $("#input-genre").append(formOption);
     }
 }).fail(function () {
     alert("ajax error");
@@ -21,9 +21,9 @@ $.ajax({
 
 //search for a specific game
 $(document).ready(function () {
-    $("#search-basic-submit").click(function () {
+    $("#input-submit").click(function () {
         console.log("clicked");
-        var gameInput = $("#game-input").val();
+        var gameInput = $("#input-keyword").val();
         $.ajax({
             type: 'GET',
             dataType: 'jsonp',
@@ -36,16 +36,16 @@ $(document).ready(function () {
             },
         }).done(function (response) {
             console.log(response);
-            $("#search-results-container").empty();
+            $("#result-list-container").empty();
             var results = response.results;
             for (i = 0; i < results.length; i++) {
                 var gameDiv = $("<div>");
-                var h = $("<h5>");
+                var h = $("<h3>");
                 h.text(results[i].name);
                 gameDiv.attr("data-guid", results[i].guid);
                 gameDiv.click(loadGamePage);
                 gameDiv.append(h);
-                $("#search-results-container").append(gameDiv);
+                $("#result-list-container").append(gameDiv);
             }
         }).fail(function () {
             alert("ajax error");

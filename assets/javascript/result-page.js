@@ -12,8 +12,17 @@ $.ajax({
     resultMainDiv.attr('id','result-main');
     resultMainDiv.addClass('col-md-12');
 
-    var h = $('<h2>').text(result.name);
-    h.attr('id','result-main-title');
+    var h2 = $('<h2>').text(result.name);
+    h2.attr('id','result-main-title');
+
+    var h5Rating = $('<h5>').text(result.original_game_rating[0].name);
+    var h5Date = $('<h5>').text(result.original_release_date);
+
+    // appending genres???
+    // for (i = 0; i < results.genres.length; i++) {
+    // var h4 = $('<h4>').text(result.genres[i].name);
+    // h4.attr('id','result-main-category');
+    // }
     
     var p = $('<p>').text(result.deck);
     p.attr('id','result-main-deck');
@@ -22,13 +31,38 @@ $.ajax({
     img.attr('id', 'result-main-image'); 
     img.attr('src', result.image.original_url);
 
-    resultMainDiv.append(h);
+    resultMainDiv.append(h2);
+    // resultMainDiv.append(h4);
+    resultMainDiv.append(h5Rating);
+    resultMainDiv.append(h5Date);
     resultMainDiv.append(img);
     resultMainDiv.append(p);
 
     $('#result-main-container').append(resultMainDiv);
 
     // }
+
+    for (i = 0; (i < result.similar_games.length) && (i < 4) ; i++)
+    {
+        console.log(i);
+        console.log(result.similar_games.length);
+        console.log(result.similar_games[i].id);
+        var guid = "3030-" + result.similar_games[i].id;
+        var div = $('<div>');
+        var h = $('<h5>');
+        div.addClass('card');
+        div.addClass('col-md-3');
+        h.text(result.similar_games[i].name);
+        div.attr('id','similar-div-'+i);
+        div.attr('data-guid', guid);
+        div.attr('data-api-url', guid);
+        div.append(h);
+
+        $('#result-similar-container').append(div);
+
+    var h = $('<h2>').text(result.name);
+    h.attr('id','result-main-title');
+    }
 
 }).fail(function () {
     alert("ajax error");
