@@ -58,7 +58,7 @@ $.ajax({
         div.attr('data-api-url', guid);
         div.append(h);
         $('#result-similar-container').append(div);
-        fetchCovers();
+        //fetchCovers();
     var h = $('<h2>').text(result.name);
     h.attr('id','result-main-title');
     }
