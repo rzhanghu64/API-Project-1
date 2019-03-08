@@ -41,21 +41,50 @@ function createCards(results, cardsAmount) {
     }
 }
 
-async function setCovers() {
+/*async function setCovers() {
     console.log("setCovers() called");
     for (var i = 0; i < CARDSAMOUNT; i++) {
         console.log("i=" + i);
         var img = $("#game-image-" + i);
         var currentGameID = img.attr("data-gameid");
         console.log("currentGameID" + currentGameID);
-        //imgsrc = JSON.stringify(await getCover(currentGameID));
-        //console.log("after getCover() " + imgsrc);
-        img.attr("src", "https:"+(await getCover(currentGameID)));
+        let imgsrc =  await getCover(currentGameID);
+        console.log("after getCover() " + imgsrc);
+        img.attr("src", imgsrc);
+        $("#card-div-" + i).prepend(img);
+    }
+}*/
+
+async function setCovers() {
+    console.log("setCovers() called");
+    for (var i = 0; i < CARDSAMOUNT; i++) {
+        var imgsrc;
+        var img = $("#game-image-" + i);
+        var currentGameID = img.attr("data-gameid");
+
+        await axios({
+            url: "https://cors-anywhere.herokuapp.com/https://api-v3.igdb.com/covers",
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'user-key': '9e200e5f3ba806bf8825821dd078350c',
+            },
+            //https://api-docs.igdb.com/?javascript#examples-12 and https://api-docs.igdb.com/?javascript#game
+            data: "fields *; where game = " + currentGameID + ";"
+        })
+        .then( function (response) {
+            imgsrc = "https:"+response.data[0].url;
+        })
+        .catch(err => {
+            console.error(err);
+        });
+
+        img.attr("src", imgsrc);
         $("#card-div-" + i).prepend(img);
     }
 }
 
-async function getCover(id) {
+/*async function getCover(id) {
     console.log("Inside getCover()");
     console.log(id);
     await axios({
@@ -69,13 +98,10 @@ async function getCover(id) {
         data: "fields *; where game = " + id + ";"
     })
     .then( function (response) {
-        var results = response.data;
-        console.log("response url " + results[0].url);
-        var imgsrc = results[0].url;
-        console.log("getCover()'s imgsrc " + "https:"+results[0].url);
-        return JSON.stringify(results[0].url);
+        console.log("https:"+response.data[0].url)
+        return "https:"+response.data[0].url;
     })
     .catch(err => {
         console.error(err);
     });
-}
+}*/
