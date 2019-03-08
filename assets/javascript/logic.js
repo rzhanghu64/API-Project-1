@@ -1,4 +1,4 @@
-const CARDSAMOUNT = 6;
+const CARDSAMOUNT = 4;
 
 async function initializeCards() {
     axios({
@@ -12,65 +12,22 @@ async function initializeCards() {
         data: "fields name,popularity; sort popularity desc;"
     }).then(async response => {
         var results = response.data;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-        // Create an array for top-4 response based of igdb API:
-        // var gameArray = [];
-        // console.log(response.data[0].name);
-        // for (var j = 0; j < 4; j++){
-        //     var gameName = response.data[j].name;
-        //     gameArray.push(gameName);
-        // }
-        // console.log(gameArray);
-
-        // For each result from API, append html card divs:
-        for (var i = 0; i < 4; i++) {
-            var cardDiv = $('<div>');
-            cardDiv.addClass('card');
-            cardDiv.attr('id', 'card-div-'+i);
-            cardDiv.addClass('col-md-3');
-            var h = $('<h3>').text(results[i].name);
-            h.addClass('card-title');
-            var p = $('<p>').text(results[i].summary);
-            var img = $('<img>');
-            img.addClass('game-image');
-            img.attr('id', 'game-image-'+i);
-            img.attr('data-gameid', results[i].id);
-            const imgLocation = await getCover(results[i].id);
-            console.log(imgLocation);
-            img.attr('src', 'https://via.placeholder.com/100');
-            cardDiv.append(img);
-            cardDiv.append(h);
-            cardDiv.append(p);
-            $('#result-trending-container').append(cardDiv);
-        }
-        // await 
-        fetchCovers();
-    })
-    .catch(err => {
-        console.error(err);
-=======
         createCards(results, CARDSAMOUNT);
         setCovers();
->>>>>>> 013d81557d10714166d497eb38870002435a92a8
-=======
->>>>>>> f05a06dc55ca5e07d1b7ba25ec52e66224615e1a
-=======
-        createCards(results, CARDSAMOUNT);
-        setCovers();
->>>>>>> f80a42e2d778cb241e891380933ff6828c77420b
     });
    
 };
+
+
 initializeCards();
+
 
 function createCards(results, cardsAmount) {
     for (var i = 0; i < cardsAmount; i++) {
         var cardDiv = $('<div>');
         cardDiv.addClass("card");
         cardDiv.attr("id", "card-div-"+i)
-        cardDiv.addClass("col-2");
+        cardDiv.addClass("col-3");
         var h = $("<h5>").text(results[i].name);
         h.addClass("card-title");
         var p = $("<p>").text(results[i].summary)
@@ -79,6 +36,7 @@ function createCards(results, cardsAmount) {
         img.attr("id", "game-image-"+i)
         img.attr("data-gameid", results[i].id);
         console.log("data-gameid attribute " + results[i].id);
+        img.attr("src", "https://via.placeholder.com/100");
         cardDiv.append(img);
         cardDiv.append(h);
         cardDiv.append(p);
