@@ -5,7 +5,7 @@ $.ajax({
     dataType: 'jsonp',
     crossDomain: true,
     jsonp: 'json_callback',
-    url: 'http://www.giantbomb.com/api/game/' + localStorage.getItem("guid") + '/?format=jsonp&api_key=3e367e43b48af015b21cb7640630f3fa0e510098'
+    url: 'https://www.giantbomb.com/api/game/' + localStorage.getItem("guid") + '/?format=jsonp&api_key=3e367e43b48af015b21cb7640630f3fa0e510098'
 }).done(function (response) {
     console.log(response);
     var result = response.results;
@@ -89,7 +89,7 @@ async function fetchCovers() {
             dataType: 'jsonp',
             crossDomain: true,
             jsonp: 'json_callback',
-            url: 'http://www.giantbomb.com/api/game/' + currentguid + '/?format=jsonp&api_key=3e367e43b48af015b21cb7640630f3fa0e510098'
+            url: 'https://www.giantbomb.com/api/game/' + currentguid + '/?format=jsonp&api_key=3e367e43b48af015b21cb7640630f3fa0e510098'
         }).done(function (response) {
             console.log('cover for ' + i);
             console.log(response);
