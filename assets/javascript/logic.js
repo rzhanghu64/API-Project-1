@@ -12,6 +12,8 @@ async function initializeCards() {
         data: "fields name,popularity; sort popularity desc;"
     }).then(async response => {
         var results = response.data;
+        createCards(results, CARDSAMOUNT);
+        setCovers();
     });
    
 };
@@ -35,7 +37,7 @@ function createCards(results, cardsAmount) {
         cardDiv.append(img);
         cardDiv.append(h);
         cardDiv.append(p);
-        $("#card-container").append(cardDiv);
+        $("#trending-container").append(cardDiv);
     }
 }
 
