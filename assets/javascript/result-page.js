@@ -17,6 +17,13 @@ $.ajax({
     h2.attr('id', 'result-main-title');
 
     //there's a problem with fetching game ratings for some games
+    // if (result.original_game_rating[0].name == null){
+
+    // }
+    // else{
+    // var gameRating = result.original_game_rating[0].name;
+    // }
+    //var h5Rating = $('<h5>').text(result.original_game_rating[0].name);
     var gameRating;
     if (result.original_game_rating == null) {
         gameRating = "Not Rated";

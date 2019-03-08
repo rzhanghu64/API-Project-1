@@ -37,10 +37,13 @@ $(document).ready(function () {
         }).done(function (response) {
             console.log(response);
             $("#result-list-container").empty();
+            var resultHeader = $("<h3>")
+            resultHeader.text("Quick Results");
+            $("#result-list-container").prepend(resultHeader);
             var results = response.results;
             for (i = 0; i < results.length; i++) {
                 var gameDiv = $("<div>");
-                var h = $("<h3>");
+                var h = $("<h4>");
                 h.text(results[i].name);
                 gameDiv.attr("data-guid", results[i].guid);
                 gameDiv.click(loadGamePage);
