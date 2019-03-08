@@ -49,13 +49,10 @@
     <h2>Search for a game by name to find similar games!</h1>
       <div class="row">
         <div class="col-md-12">
-          <form class="needs-validation" novalidate>
+          <form>
             <div class="form-group">
               <label for="input-keyword">Keyword</label>
-              <input type="text" class="form-control" id="input-keyword" placeholder="Ex. Pokemon" value="" required>
-              <div class="invalid-tooltip">
-                You must enter a search term!
-              </div>
+              <input type="text" class="form-control" id="input-keyword" placeholder="Ex. Pokemon">
             </div>
             <input class="btn btn-primary" type="button" value="Submit" id="input-submit">
             <!-- <input class="btn btn-secondary" type="button" value="Reset"> -->
@@ -63,7 +60,6 @@
           </form>
         </div>
       </div>
-      <hr>
 
       <!-- <h2>Or search for games by genre and platform!</h1>
         <div class="form-group">
@@ -76,9 +72,10 @@
         </div> -->
   </div>
 
-  <hr />
+  <br />
 
   <div class="container" id="result-list-container">
+    <h3>Quick Results</h3>
     <!-- list of search results to be dumped in here -->
   </div>
 
