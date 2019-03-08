@@ -72,8 +72,8 @@ async function getCover(id) {
         var results = response.data;
         console.log("response url " + results[0].url);
         var imgsrc = results[0].url;
-        console.log("getCover()'s imgsrc " + imgsrc);
-        return JSON.Stringify(results[0].url);
+        console.log("getCover()'s imgsrc " + "https:"+results[0].url);
+        return JSON.stringify(results[0].url);
     })
     .catch(err => {
         console.error(err);
