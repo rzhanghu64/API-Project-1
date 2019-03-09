@@ -171,8 +171,7 @@ h4:hover {
 #result {
     padding-top: 1em;
     margin-top: 2em;
-    width: 100%;
-
+    width: 100%;  
 }
 #result-main-title {
   margin-right: 5em;
@@ -187,12 +186,18 @@ h4:hover {
 
 #result-main-deck {
     
-
 }
+
+#title-style{
+    background: linear-gradient(to right, orange 0%, yellow 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 
 .clearfix {
     overflow: auto;
-}
+  }
 
 
 /* Footer */
