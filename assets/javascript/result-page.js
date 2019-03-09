@@ -19,14 +19,6 @@ $.ajax({
     var h2 = $('<h2>').text(result.name);
     h2.attr('id', 'result-main-title');
 
-    //there's a problem with fetching game ratings for some games
-    // if (result.original_game_rating[0].name == null){
-
-    // }
-    // else{
-    // var gameRating = result.original_game_rating[0].name;
-    // }
-    //var h5Rating = $('<h5>').text(result.original_game_rating[0].name);
     var gameRating;
     if (result.original_game_rating == null) {
         gameRating = "Not Rated";
@@ -34,22 +26,20 @@ $.ajax({
     else{
         gameRating = result.original_game_rating[0].name;
     }
-    var h5Rating = $('<h5>').text(gameRating);
-
-    // var h5Date = $('<h5>').text();
-    //result.original_release_date
+    var h5Rating = $('<h5>').text('[Rating] ' + gameRating);
+    h5Rating.addClass('text-category');
 
     var h4 = $('<h5>');
-    var h4text = "Genres: ";
+    var h4text = "[Genres] ";
     for (i = 0; i < result.genres.length; i++) {
-     h4text = h4text+result.genres[i].name;
+     h4text = h4text + result.genres[i].name;
      if (i != (result.genres.length-1)){
         h4text = h4text + ", ";
      }
      h4.text(h4text);
     }
-    
-    h4.attr('id','result-main-category');
+    h4.addClass('text-category');
+
     var p = $('<p>').text(result.deck);
     p.attr('id', 'result-main-deck');
 
