@@ -5,13 +5,16 @@ $.ajax({
     dataType: 'jsonp',
     crossDomain: true,
     jsonp: 'json_callback',
-    url: 'http://www.giantbomb.com/api/game/' + localStorage.getItem("guid") + '/?format=jsonp&api_key=3e367e43b48af015b21cb7640630f3fa0e510098'
+    url: 'https://www.giantbomb.com/api/game/' + localStorage.getItem("guid") + '/?format=jsonp&api_key=3e367e43b48af015b21cb7640630f3fa0e510098'
 }).done(function (response) {
     console.log(response);
     var result = response.results;
     var resultMainDiv = $('<div>');
+    resultMainDiv.addClass('col-md-6');
     resultMainDiv.attr('id', 'result-main');
-    resultMainDiv.addClass('col-md-12');
+
+    var resultMainImg = $('<div>');
+    resultMainImg.addClass('col-md-6');
 
     var h2 = $('<h2>').text(result.name);
     h2.attr('id', 'result-main-title');
@@ -33,7 +36,8 @@ $.ajax({
     }
     var h5Rating = $('<h5>').text(gameRating);
 
-    var h5Date = $('<h5>').text(result.original_release_date);
+    // var h5Date = $('<h5>').text();
+    //result.original_release_date
 
     // appending genres???
     // for (i = 0; i < results.genres.length; i++) {
@@ -45,16 +49,18 @@ $.ajax({
     p.attr('id', 'result-main-deck');
 
     var img = $('<img>');
+    img.addClass('image-fluid');
     img.attr('id', 'result-main-image');
     img.attr('src', result.image.original_url);
 
-    resultMainDiv.append(h2);
     // resultMainDiv.append(h4);
     resultMainDiv.append(h5Rating);
-    resultMainDiv.append(h5Date);
-    resultMainDiv.append(img);
+    // resultMainDiv.append(h5Date);
+    resultMainImg.append(img);
+    resultMainDiv.append(h2);
     resultMainDiv.append(p);
 
+    $('#result-main-container').append(resultMainImg);
     $('#result-main-container').append(resultMainDiv);
 
     if (result.similar_games === null) {
@@ -89,7 +95,7 @@ async function fetchCovers() {
             dataType: 'jsonp',
             crossDomain: true,
             jsonp: 'json_callback',
-            url: 'http://www.giantbomb.com/api/game/' + currentguid + '/?format=jsonp&api_key=3e367e43b48af015b21cb7640630f3fa0e510098'
+            url: 'https://www.giantbomb.com/api/game/' + currentguid + '/?format=jsonp&api_key=3e367e43b48af015b21cb7640630f3fa0e510098'
         }).done(function (response) {
             console.log('cover for ' + i);
             console.log(response);

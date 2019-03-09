@@ -1,6 +1,6 @@
 /* Body */
 
-.container{
+.container {
     background:rgba(255,255,255,0.8);
     border-radius: 25px;
     border: 2px solid dodgerblue;
@@ -155,17 +155,29 @@ h4:hover {
 #result {
     padding-top: 1em;
     margin-top: 2em;
-}
-
-/* Results - Similar */
-
-.game-image {
+    width: 100%;
 
 }
+#result-main-title {
+  margin-right: 5em;
+ 
+}
 
-.card-title {
+#result-main-image {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+
+#result-main-deck {
+    
 
 }
+
+.clearfix {
+    overflow: auto;
+}
+
 
 /* Footer */
 
