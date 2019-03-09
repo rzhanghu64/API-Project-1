@@ -25,7 +25,7 @@ function createCards(results, cardsAmount) {
         var cardDiv = $('<div>');
         cardDiv.addClass("card");
         cardDiv.attr("id", "card-div-" + i)
-        cardDiv.addClass("col-2");
+        cardDiv.addClass("col-md-2");
         cardDiv.addClass("trending-card");
         cardDiv.attr("data-name", results[i].name);
         var h = $("<h5>").text(results[i].name);
