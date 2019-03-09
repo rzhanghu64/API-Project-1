@@ -81,6 +81,12 @@ $(document).ready(function () {
     });
 });
 
+$(document).ready(function () {
+    $(".about-link").click(function () {
+        localStorage.setItem("guid", $(this).data("guid"));
+        window.location = "results.html";
+    });
+});
 
 function loadGamePage() {
     var gameInput = $(this).data("name");
