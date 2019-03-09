@@ -54,7 +54,7 @@ $.ajax({
     img.attr('src', result.image.original_url);
 
     // resultMainDiv.append(h4);
-    //resultMainDiv.append(h5Rating);
+    resultMainDiv.append(h5Rating);
     // resultMainDiv.append(h5Date);
     resultMainImg.append(img);
     resultMainDiv.append(h2);
