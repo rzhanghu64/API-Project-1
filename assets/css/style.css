@@ -102,6 +102,14 @@ p {
     color: rgb(252, 236, 11);
 }
 
+.carousel-control-prev {
+    background: grey;
+}
+
+.carousel-control-next {
+    background: grey;
+}
+
 /* Header - Carousel */
 
 .carousel {
