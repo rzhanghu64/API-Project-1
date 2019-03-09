@@ -112,6 +112,7 @@ p {
 #carousel-ad {
     max-height: 380px;
     width: auto;
+    text-align: center;
 }
 
 img.image-carousel-ad {
