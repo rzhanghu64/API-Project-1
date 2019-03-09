@@ -140,19 +140,29 @@ img.image-carousel-ad {
 #result {
     padding-top: 1em;
     margin-top: 2em;
-}
-
-/* Results - Similar */
-
-.card {
+    width: 100%;
 
 }
+#result-main-title {
+  margin-right: 5em;
+ 
+}
 
-.game-image {
+#result-main-image{
+    max-height: 100%;
+    max-width: 100%;
+}
+
+
+#result-main-deck{
+    
 
 }
 
-.card-title {
+.clearfix {
+    overflow: auto;
+  }
+
 
 }
 
