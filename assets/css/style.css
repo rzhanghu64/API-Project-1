@@ -39,6 +39,9 @@ h1 {
     font-family: 'Sniglet', cursive;
     font-size: 30px;
     text-align: center;
+    background: linear-gradient(to right, orange 0%, yellow 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 h2 {
@@ -48,6 +51,9 @@ h2 {
 h3 {
     font-family: 'Sniglet', cursive;
     text-align: center;
+    background: linear-gradient(to right, orange 0%, yellow 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 h4 {
@@ -69,6 +75,12 @@ h6 {
 
 p {
     font-family: 'Lato', sans-serif;
+}
+
+i {
+    background: linear-gradient(to right, orange 0%, yellow 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 /* Header - Nav */
@@ -102,14 +114,6 @@ p {
     color: rgb(252, 236, 11);
 }
 
-.carousel-control-prev {
-    background: grey;
-}
-
-.carousel-control-next {
-    background: grey;
-}
-
 /* Header - Carousel */
 
 .carousel {
@@ -127,6 +131,21 @@ img.image-carousel-ad {
     max-height: 345px;
 }
 
+.carousel-control-prev {
+    width: 50px;
+    background: dodgerblue;
+    border-top-left-radius: 23px;
+    border-bottom-left-radius: 23px;
+}
+
+.carousel-control-next {
+    width: 50px;
+    background: dodgerblue;
+    border-top-right-radius: 23px;
+    border-bottom-right-radius: 23px;
+}
+
+
 /* Content - Game Search */
 
 label {
@@ -139,19 +158,28 @@ label {
     border: none;
 }
 
-/* Content - Trending */
-
-#trending-container {
-
-}
+/* Content - Trending & Similar cards */
 
 .card {
-    padding-top: 1em;
+    height: 210px;
+    text-align: center;
+    padding: 1em;
     overflow: hidden;
     display: inline-block;
-    text-align: center;
-    height: 12em;
-  
+    border-radius: 0px;
+}
+
+.card-title {
+    color:#999999;
+}
+
+.card-title:hover {
+    color: black;
+    text-decoration: underline;
+}
+
+.game-image {
+    width: 140px;
 }
 
 /* Results - List */
@@ -182,18 +210,6 @@ h4:hover {
     max-height: 100%;
     max-width: 100%;
 }
-
-
-#result-main-deck {
-    
-}
-
-#title-style{
-    background: linear-gradient(to right, orange 0%, yellow 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
 
 .clearfix {
     overflow: auto;

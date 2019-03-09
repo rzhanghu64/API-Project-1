@@ -54,10 +54,10 @@ $.ajax({
     img.attr('src', result.image.original_url);
 
     // resultMainDiv.append(h4);
-    resultMainDiv.append(h5Rating);
     // resultMainDiv.append(h5Date);
     resultMainImg.append(img);
     resultMainDiv.append(h2);
+    resultMainDiv.append(h5Rating);
     resultMainDiv.append(p);
 
     $('#result-main-container').append(resultMainImg);
@@ -73,8 +73,9 @@ $.ajax({
         var guid = "3030-" + result.similar_games[i].id;
         var div = $('<div>');
         var h = $('<h5>').text(result.similar_games[i].name);
+        h.addClass("card-title");
         div.addClass('card');
-        div.addClass('col-md-2');
+        div.addClass('col-md-4');
         div.attr('id', 'similar-div-' + i);
         div.attr('data-guid', guid);
         div.attr('data-api-url', guid);
@@ -101,6 +102,7 @@ async function fetchCovers() {
             console.log(response);
             var imgsrc = response.results.image.icon_url;
             var img = $('<img>');
+            img.addClass("game-image");
             img.attr('id', 'similar-game-img-'+i);
             img.attr('src', imgsrc);
             $('#similar-div-' + i).prepend(img);
