@@ -5,7 +5,7 @@ $.ajax({
     dataType: 'jsonp',
     crossDomain: true,
     jsonp: 'json_callback',
-    url: 'http://www.giantbomb.com/api/game/' + localStorage.getItem("guid") + '/?format=jsonp&api_key=3e367e43b48af015b21cb7640630f3fa0e510098'
+    url: 'https://www.giantbomb.com/api/game/' + localStorage.getItem("guid") + '/?format=jsonp&api_key=3e367e43b48af015b21cb7640630f3fa0e510098'
 }).done(function (response) {
     console.log(response);
     var result = response.results;
@@ -20,13 +20,21 @@ $.ajax({
     h2.attr('id', 'result-main-title');
 
     //there's a problem with fetching game ratings for some games
-    if (result.original_game_rating[0].name == null){
+    // if (result.original_game_rating[0].name == null){
 
+    // }
+    // else{
+    // var gameRating = result.original_game_rating[0].name;
+    // }
+    //var h5Rating = $('<h5>').text(result.original_game_rating[0].name);
+    var gameRating;
+    if (result.original_game_rating == null) {
+        gameRating = "Not Rated";
     }
     else{
-    var gameRating = result.original_game_rating[0].name;
+        gameRating = result.original_game_rating[0].name;
     }
-    //var h5Rating = $('<h5>').text(result.original_game_rating[0].name);
+    var h5Rating = $('<h5>').text(gameRating);
 
     // var h5Date = $('<h5>').text();
     //result.original_release_date
@@ -55,8 +63,13 @@ $.ajax({
     $('#result-main-container').append(resultMainImg);
     $('#result-main-container').append(resultMainDiv);
 
+    if (result.similar_games === null) {
+        similarGamesLength = 0;
+    } else {
     similarGamesLength = result.similar_games.length;
-    for (i = 0; (i < result.similar_games.length) && (i < 6); i++) {
+    }
+
+    for (i = 0; (i < similarGamesLength) && (i < 6); i++) {
         var guid = "3030-" + result.similar_games[i].id;
         var div = $('<div>');
         var h = $('<h5>').text(result.similar_games[i].name);
@@ -82,7 +95,7 @@ async function fetchCovers() {
             dataType: 'jsonp',
             crossDomain: true,
             jsonp: 'json_callback',
-            url: 'http://www.giantbomb.com/api/game/' + currentguid + '/?format=jsonp&api_key=3e367e43b48af015b21cb7640630f3fa0e510098'
+            url: 'https://www.giantbomb.com/api/game/' + currentguid + '/?format=jsonp&api_key=3e367e43b48af015b21cb7640630f3fa0e510098'
         }).done(function (response) {
             console.log('cover for ' + i);
             console.log(response);
