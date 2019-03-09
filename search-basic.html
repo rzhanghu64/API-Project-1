@@ -14,7 +14,8 @@
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <!-- Customized CSS -->
   <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css">
-  <link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Fredoka+One|Lato|Righteous|Sniglet" rel="stylesheet">
+  
   <!-- JQuery -->
   <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
   <!-- Popper JS -->
@@ -45,14 +46,14 @@
 
 
   <!-- Content: Game Search -->
-  <div class="container" id="game-form">
-    <h2>Search for a game by name to find similar games!</h1>
+  <div class="container">
+    <h1>Search for a Quest...</h1>
       <div class="row">
         <div class="col-md-12">
           <form>
-            <div class="form-group">
-              <label for="input-keyword">Keyword</label>
-              <input type="text" class="form-control" id="input-keyword" placeholder="Ex. Pokemon">
+            <div class="form-group justify-content-center text-center">
+              <input type="text" class="form-control" id="input-keyword">
+              <label for="input-keyword">(enter game keyword)</label>
             </div>
             <input class="btn btn-primary" type="button" value="Submit" id="input-submit">
             <!-- <input class="btn btn-secondary" type="button" value="Reset"> -->
@@ -71,8 +72,6 @@
           <select class="form-control" id="input-platform"></select>
         </div> -->
   </div>
-
-  <br />
 
   <div class="container" id="result-list-container">
     <h3>Quick Results</h3>
