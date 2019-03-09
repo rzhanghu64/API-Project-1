@@ -73,6 +73,7 @@ h6 {
 p {
     margin-top: 20px;
     font-family: 'Lato', sans-serif;
+    line-height: 20px;
 }
 
 i {
@@ -158,6 +159,10 @@ label {
 
 /* Content - Trending & Similar cards */
 
+#trending {
+    margin-bottom: 80px;
+}
+
 .card {
     height: 210px;
     text-align: center;
@@ -180,10 +185,28 @@ label {
     width: 140px;
 }
 
+/* Content - About */
+
+#about {
+    margin-bottom: 80px;
+}
+
+.about-link {
+    line-height: 16px;
+    font-size: 14px;
+    color: #999999;
+}
+
+.about-link:hover {
+    color: black;
+    text-decoration: underline;
+}
+
 /* Results - List */
 
-#result-list-container {
-    min-height: 268px;
+#result-list {
+    min-height: 220px;
+    margin-bottom: 80px;
 }
 
 h4:hover {
@@ -220,6 +243,12 @@ h4:hover {
     color: #999999;
 }
 
+/* Result - Similar */
+
+#similar {
+    margin-bottom: 80px;
+}
+
 /* Footer */
 
 #footer {
@@ -229,4 +258,8 @@ h4:hover {
     margin-top: 30px;
     width: 100%;
     background-color: dodgerblue;
+}
+
+a.footer-link {
+    color: #bbddff;
 }

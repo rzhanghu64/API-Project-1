@@ -30,14 +30,14 @@
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
   <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico" />
-  <title>Questgiver|Result</title>
+  <title>Questgiver | Result</title>
 </head>
 
 <body>
 
   <!-- Header Navbar -->
   <nav class="nav justify-content-center">
-    <a href="./index.html">
+    <a href="./about.html">
       <img src="assets/images/wizard.png" alt="wizard" id="wizard"></a>
     <a class="nav-link active" id="logo" href="./index.html">Questgiver!</a>
     <a class="nav-link" id="home-search" href="./search-basic.html"><i class="fas fa-search"></i> Search</a>  
@@ -60,11 +60,9 @@
     </div>
   </div>
 
-  <br />
-
   <!-- Content: Similar results  style="color:orange; -->
 
-  <div class="container">
+  <div class="container" id="similar">
     <div class="row">
       <div class="col-md-12">
         <h3 id="title-style">Similar Quests <i id= "title-style" class="fas fa-exclamation-circle"></i></h3>
@@ -76,10 +74,12 @@
   </div>
 
   <!-- Footer -->
-  <div id="footer">
-    <h6>Copyright ©</h6>
+  <div class="fixed-bottom" id="footer"> 
+    <h6>Copyright © 2019 Questgiver | Powered by 
+    <a class="footer-link" href="https://www.giantbomb.com" target="_blank">Giantbomb</a> & 
+    <a class="footer-link" href="https://www.igdb.com/discover" target="_blank">IGDB</a></h6>
   </div>
-
+  
 </body>
 
 <script src="assets/javascript/result-page.js"></script>

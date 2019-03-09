@@ -30,14 +30,14 @@
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
   <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico" />
-  <title>Questgiver|Search</title>
+  <title>Questgiver | Search</title>
 </head>
 
 <body>
 
   <!-- Header Navbar -->
   <nav class="nav justify-content-center">
-    <a href="./index.html">
+    <a href="./about.html">
       <img src="assets/images/wizard.png" alt="wizard" id="wizard"></a>
     <a class="nav-link active" id="logo" href="./index.html">Questgiver!</a>
     <a class="nav-link" id="home-search" href="#"><i class="fas fa-search"></i> Search</a>  </nav>
@@ -74,17 +74,21 @@
         </div> -->
   </div>
 
-  <div class="container" id="result-list-container">
+  <div class="container" id="result-list">
     <h3>Quick Results</h3>
-    <!-- list of search results to be dumped in here -->
-  </div>
+    <div id="result-list-container">
+      <!-- list of search results to be dumped in here -->
 
+    </div>
+  </div>
 
   <!-- Footer -->
-  <div id="footer">
-    <h6>Copyright ©</h6>
+  <div class="fixed-bottom" id="footer"> 
+    <h6>Copyright © 2019 Questgiver | Powered by 
+    <a class="footer-link" href="https://www.giantbomb.com" target="_blank">Giantbomb</a> & 
+    <a class="footer-link" href="https://www.igdb.com/discover" target="_blank">IGDB</a></h6>
   </div>
-
+  
 </body>
 
 <script src="assets/javascript/basic-search.js"></script>

@@ -37,9 +37,6 @@ $(document).ready(function () {
         }).done(function (response) {
             console.log(response);
             $("#result-list-container").empty();
-            var resultHeader = $("<h3>")
-            resultHeader.text("Quick Results");
-            $("#result-list-container").prepend(resultHeader);
             var results = response.results;
             for (i = 0; i < results.length; i++) {
                 var gameDiv = $("<div>");
