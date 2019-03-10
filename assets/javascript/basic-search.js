@@ -58,7 +58,7 @@ function loadGamePage() {
     window.location = "results.html";
 };
 
-$("#input-keyword").keyup(function (event) {
+$("#input-keyword").keydown(function (event) {
     if (event.keyCode === 13) {
         event.preventDefault();
         console.log("pressed enter");
